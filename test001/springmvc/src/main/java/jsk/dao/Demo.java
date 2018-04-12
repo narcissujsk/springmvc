@@ -1,4 +1,4 @@
-package test001.dao;
+package jsk.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,7 +13,7 @@ public class Demo {
     // 加载数据库驱动  com.mysql.jdbc.Driver
         private static String dbdriver = "com.mysql.jdbc.Driver";
         // 获取mysql连接地址
-        private static String dburl = "jdbc:mysql://127.0.0.1:3306/cmxDatabaseName?&useSSL=false";
+        private static String dburl = "jdbc:mysql://127.0.0.1:3306/jsk?&useSSL=false";
         // 数据名称
         private static String username = "root";
         // 数据库密码

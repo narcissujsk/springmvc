@@ -1,4 +1,4 @@
-package test001.vo;
+package jsk.vo;
 
 public class Course {
 

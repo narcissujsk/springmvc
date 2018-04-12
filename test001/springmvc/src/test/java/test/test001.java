@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import test001.vo.User;
+import jsk.vo.User;
 
 public class test001 {
 	private static final Logger logger = LoggerFactory.getLogger(test001.class);

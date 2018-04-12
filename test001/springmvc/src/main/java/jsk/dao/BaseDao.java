@@ -1,16 +1,20 @@
-package test001.dao;
+package jsk.dao;
 
 
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.naming.NamingException;
 import java.sql.*;
 import java.util.*;
 
 public class BaseDao {
-    private static final Logger logger;
+    protected static final Logger logger;
     private static final char UNDERLINE = '_';
-
+    static {
+        logger = LoggerFactory.getLogger(BaseDao.class);
+    }
     // 加载数据库驱动  com.mysql.jdbc.Driver
         private static String dbdriver = "com.mysql.jdbc.Driver";
         // 获取mysql连接地址
@@ -112,9 +116,7 @@ public class BaseDao {
         return list;
     }
 
-    static {
-        logger = Logger.getLogger(BaseDao.class);
-    }
+   
 
     Statement stmt = null;
     PreparedStatement preparedStatement = null;

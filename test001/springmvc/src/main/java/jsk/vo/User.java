@@ -1,7 +1,12 @@
-package test001.vo;
+package jsk.vo;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import test.test001;
 
 public class User {
-
+	private static final Logger logger = LoggerFactory.getLogger(User.class);
 	private String id;
 	private String name;
 
@@ -21,15 +26,18 @@ public class User {
 		this.name = name;
 	}
 
-	
 	public String getMessage() {
-		System.out.println(toString());
+		logger.info(toString()+" hashCode:"+hashCode());
+		logger.info("");
 		return id;
 	}
 
-	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + "]";
+	}
+
+	public int hashCode() {
+		return super.hashCode();
 	}
 
 	public void init() {

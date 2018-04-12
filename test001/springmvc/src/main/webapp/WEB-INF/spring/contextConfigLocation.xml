@@ -21,7 +21,7 @@
 
 	</bean> -->
 
-	<bean id="user1" class="test001.vo.User" scope="prototype"
+	<bean id="user1" class="jsk.vo.User" scope="prototype"
 		init-method="init" destroy-method="destroy">
 		<property name="id" value="id1" />
 		<property name="name" value="name1" />

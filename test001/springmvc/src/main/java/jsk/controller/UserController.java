@@ -1,4 +1,4 @@
-package test001.controller;
+package jsk.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 
-import test001.service.UserService;
-import test001.vo.User;
+import jsk.service.UserService;
+import jsk.vo.User;
 
 @Scope("prototype")
 @Controller
