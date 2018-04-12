@@ -21,4 +21,23 @@ public class User {
 		this.name = name;
 	}
 
+	
+	public String getMessage() {
+		System.out.println(toString());
+		return id;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + "]";
+	}
+
+	public void init() {
+		System.out.println("Bean is going through init.");
+	}
+
+	public void destroy() {
+		System.out.println("Bean will destroy now.");
+	}
+
 }

@@ -21,9 +21,9 @@ import org.springframework.web.multipart.MultipartFile;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+public class fileUpload {
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(fileUpload.class);
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -66,7 +66,7 @@ public class HomeController {
 		// 如果文件不为空，写入上传路径
 		if (!file.isEmpty()) {
 			// 上传文件路径
-			String path = "D:/";
+			String path = "D:/jsk";
 			// 上传文件名
 			String filename = file.getOriginalFilename();
 			File filepath = new File(path, filename);

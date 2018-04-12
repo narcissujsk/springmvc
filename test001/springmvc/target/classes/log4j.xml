@@ -11,10 +11,12 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.test002.jsk">
+	<logger name="test">
 		<level value="info" />
 	</logger>
-	
+	<logger name="controller">
+		<level value="info" />
+	</logger>
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
 		<level value="info" />
