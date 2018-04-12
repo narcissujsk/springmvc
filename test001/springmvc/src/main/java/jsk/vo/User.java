@@ -3,10 +3,8 @@ package jsk.vo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import test.test001;
-
 public class User {
-	private static final Logger logger = LoggerFactory.getLogger(User.class);
+	//private static final Logger logger = LoggerFactory.getLogger(User.class);
 	private String id;
 	private String name;
 
@@ -27,6 +25,7 @@ public class User {
 	}
 
 	public String getMessage() {
+		Logger logger = LoggerFactory.getLogger(User.class);
 		logger.info(toString()+" hashCode:"+hashCode());
 		logger.info("");
 		return id;

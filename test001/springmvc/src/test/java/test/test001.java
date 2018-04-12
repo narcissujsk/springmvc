@@ -9,6 +9,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import jsk.service.UserService;
 import jsk.vo.Student;
 import jsk.vo.User;
 
@@ -41,11 +42,18 @@ public class test001 {
 			System.out.println(string);
 		}
 	}
-
+	@Test
+	public void testAuto() {
+		UserService service=new UserService();
+		service.getUser1().getMessage();
+	}
+	@Test
+	public void testautowire() {
+		UserService service = (UserService) context.getBean("service");
+		service.getUser1().getMessage();
+	}
 	@Test
 	public void beanTeat001() {
-
-		 context = new ClassPathXmlApplicationContext("beans.xml");
 
 		User obj = (User) context.getBean("user1");
 		obj.getMessage();
@@ -68,9 +76,6 @@ public class test001 {
 
 	@Test
 	public void beanStudentTeat002() {
-
-		 context = new FileSystemXmlApplicationContext(
-				"src/main/webapp/WEB-INF/spring/contextConfigLocation.xml");
 		Student obj = (Student) context.getBean("student1");
 		logger.info(obj.hashCode() + "");
 		Student obj2 = context.getBean(Student.class);

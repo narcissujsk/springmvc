@@ -25,6 +25,8 @@ import jsk.vo.User;
 public class UserController {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+	@Autowired
+	private UserService service;
 	//
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -33,7 +35,7 @@ public class UserController {
 	@ResponseBody
 	public ResponseEntity<String> getUser(HttpServletRequest request, HttpServletResponse response,
 			@PathVariable(value = "userid") String userid) {
-		UserService service=new UserService();
+		
 		User user = service.getUserByID(userid);
 		logger.info("getUser userid:" + userid);
 		System.out.println("getUser userid:" +userid+"");
@@ -41,6 +43,12 @@ public class UserController {
 		String entity = gson.toJson(user);
 		ResponseEntity<String> re = new ResponseEntity<String>(entity, null, HttpStatus.ACCEPTED);
 		return re;
+	}
+	public UserService getService() {
+		return service;
+	}
+	public void setService(UserService service) {
+		this.service = service;
 	}
 
 

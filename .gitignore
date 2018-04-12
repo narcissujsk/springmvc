@@ -1,0 +1,4 @@
+
+*.class
+test001/springmvc/target/m2e-wtp/web-resources/META-INF/maven/com.narcissujsk/spring/pom.properties
+*.properties
