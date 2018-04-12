@@ -7,8 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import controller.fileUpload;
-import vo.User;
+import test001.vo.User;
 
 public class test001 {
 	private static final Logger logger = LoggerFactory.getLogger(test001.class);
@@ -31,6 +30,7 @@ public class test001 {
 	public void beanTeat001() {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		
 		User obj = (User) context.getBean("user1");
 		obj.getMessage();
 		obj = context.getBean(User.class);

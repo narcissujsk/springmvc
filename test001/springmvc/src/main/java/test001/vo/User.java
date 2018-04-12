@@ -1,4 +1,4 @@
-package vo;
+package test001.vo;
 
 public class User {
 

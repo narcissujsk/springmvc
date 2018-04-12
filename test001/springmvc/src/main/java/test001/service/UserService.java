@@ -1,8 +1,8 @@
-package service;
+package test001.service;
 
 import org.springframework.stereotype.Service;
 
-import vo.User;
+import test001.vo.User;
 @Service
 public class UserService {
 	
