@@ -31,7 +31,7 @@ public class User {
 		logger.info("");
 		return id;
 	}
-
+//
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + "]";
 	}

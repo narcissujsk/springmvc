@@ -1,5 +1,5 @@
 package jsk.vo;
-
+//
 public class Course {
 
 	private String courseid;

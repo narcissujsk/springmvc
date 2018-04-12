@@ -25,7 +25,7 @@ import jsk.vo.User;
 public class UserController {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
-	
+	//
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */

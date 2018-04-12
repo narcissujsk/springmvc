@@ -14,7 +14,7 @@ public class BaseDao {
     private static final char UNDERLINE = '_';
     static {
         logger = LoggerFactory.getLogger(BaseDao.class);
-    }
+    }//
     // 加载数据库驱动  com.mysql.jdbc.Driver
         private static String dbdriver = "com.mysql.jdbc.Driver";
         // 获取mysql连接地址

@@ -8,7 +8,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+//
 public class Demo {
     // 加载数据库驱动  com.mysql.jdbc.Driver
         private static String dbdriver = "com.mysql.jdbc.Driver";

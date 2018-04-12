@@ -22,7 +22,7 @@ public class Student implements InitializingBean,DisposableBean {
 	public String getStudentid() {
 		return studentid;
 	}
-
+//
 	public void setStudentid(String studentid) {
 		this.studentid = studentid;
 	}
