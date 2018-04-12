@@ -17,11 +17,12 @@
 	</bean>
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- <bean id="user" class="vo.User" scope="prototype">
-
-	</bean> -->
-
-	<bean id="user1" class="jsk.vo.User" scope="prototype"
+	<!-- <bean id="user" class="vo.User" scope="prototype"> </bean> -->
+	<bean id="student1" class="jsk.vo.Student" scope="singleton">
+		<property name="studentid" value="id1" />
+		<property name="studentname" value="name1" />
+	</bean>
+	<bean id="user1" class="jsk.vo.User" scope="singleton"
 		init-method="init" destroy-method="destroy">
 		<property name="id" value="id1" />
 		<property name="name" value="name1" />
