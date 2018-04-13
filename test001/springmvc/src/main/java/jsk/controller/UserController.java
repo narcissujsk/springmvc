@@ -1,5 +1,7 @@
 package jsk.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -41,6 +43,17 @@ public class UserController {
 		System.out.println("getUser userid:" +userid+"");
 		Gson gson = new Gson();
 		String entity = gson.toJson(user);
+		ResponseEntity<String> re = new ResponseEntity<String>(entity, null, HttpStatus.ACCEPTED);
+		return re;
+	}
+	@RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+	@ResponseBody
+	public ResponseEntity<String> getUsers(HttpServletRequest request, HttpServletResponse response) {
+		
+		List<User> users = service.getUsers();
+		logger.info("getUsers"+users);	
+		Gson gson = new Gson();
+		String entity = gson.toJson(users);
 		ResponseEntity<String> re = new ResponseEntity<String>(entity, null, HttpStatus.ACCEPTED);
 		return re;
 	}

@@ -14,7 +14,10 @@
 	<logger name="test">
 		<level value="info" />
 	</logger>
-	<logger name="controller">
+	<logger name="jsk">
+		<level value="info" />
+	</logger>
+	<logger name="jsk1">
 		<level value="info" />
 	</logger>
 	<!-- 3rdparty Loggers -->

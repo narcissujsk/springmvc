@@ -1,4 +1,4 @@
-package util;
+package jsk.util;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;

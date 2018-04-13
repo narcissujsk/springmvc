@@ -4,8 +4,12 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import jsk.vo.User;
 
+
+@Repository()
 public class UserDao extends BaseDao {
 //
 	public List<User> getUsers() {
