@@ -1,0 +1,22 @@
+<Context>
+    <Resource name="jdbc/datasource"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="com.mysql.jdbc.Driver"
+              username="icp"
+			  password="1qaz2wsx"
+			  url="jdbc:mysql://10.110.1.26:3306/icp?useUnicode=true&amp;characterEncoding=UTF-8"
+              maxActive="50"
+              maxWait="5000"
+              testOnBorrow="true"
+              validationQuery="select 1"
+              removeAbandoned="true"
+              removeAbandonedTimeout="300"
+              logAbandoned="true"
+              factory="com.alibaba.druid.pool.DruidDataSourceFactory"
+              filters="stat"
+              connectionProperties="druid.stat.mergeSql=true;druid.stat.slowSqlMillis=10000"
+              useGlobalDataSourceStat="true"  />
+              
+   
+</Context>
