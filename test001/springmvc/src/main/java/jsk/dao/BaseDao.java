@@ -31,7 +31,22 @@ public class BaseDao {
 		List<List<Object>> x = getData("mysql", "select * from user");
 		System.out.println("x=" + x);
 	}
+	
+	
+	public Connection getConnection() {
 
+		try {
+			if (conn == null) {
+				//conn = getConn2();
+				conn = getConn();
+			}
+
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+
+		}
+		return conn;
+	}
 	/**
 	 * 获取数据库连接
 	 * 
@@ -41,7 +56,7 @@ public class BaseDao {
 	 * @throws SQLException
 	 */
 
-	private static Connection getConn() {
+	private static Connection getConn2() {
 		Connection conn = null;
 		try {
 			Class.forName(dbdriver);
@@ -55,13 +70,18 @@ public class BaseDao {
 		return conn;
 	}
 
-	/*
-	 * private static Connection getConn() { Connection conn = null; try { conn =
-	 * DBHelper.getConnection(); } catch (SQLException e) { e.printStackTrace(); }
-	 * catch (NamingException e) { e.printStackTrace(); }
-	 * 
-	 * return conn; }
-	 */
+	private static Connection getConn() {
+		Connection conn = null;
+		try {
+			conn = DBHelper.getConnection();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+
+		return conn;
+	}
 
 	/**
 	 * 关闭数据库连接
@@ -133,19 +153,7 @@ public class BaseDao {
 
 	}
 
-	public Connection getConnection() {
 
-		try {
-			if (conn == null) {
-				conn = getConn();
-			}
-
-		} catch (Exception e) {
-			logger.error(e.getMessage());
-
-		}
-		return conn;
-	}
 
 	/**
 	 * 关闭连接、事务、结果集的方法，供子类调用
