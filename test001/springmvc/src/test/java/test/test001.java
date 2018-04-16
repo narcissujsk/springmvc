@@ -12,6 +12,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 import jsk.service.UserService;
 import jsk.vo.Student;
 import jsk.vo.User;
+import knights.BraveKnight;
 
 public class test001 {
 	private static final Logger logger = LoggerFactory.getLogger(test001.class);
@@ -33,7 +34,12 @@ public class test001 {
 		System.out.println("fff");
 		logger.info("ffff");
 	}
-
+	@Test
+	public void testknight() {
+		BraveKnight knight = (BraveKnight) context.getBean("knight");
+		knight.embarkOnQuest();
+	}
+	
 	@Test
 	public void test002() {
 		System.out.println("fff");
@@ -42,16 +48,7 @@ public class test001 {
 			System.out.println(string);
 		}
 	}
-	@Test
-	public void testAuto() {
-		UserService service=new UserService();
-		service.getUser1().getMessage();
-	}
-	@Test
-	public void testautowire() {
-		UserService service = (UserService) context.getBean("service");
-		service.getUser1().getMessage();
-	}
+	
 	@Test
 	public void beanTeat001() {
 
@@ -66,21 +63,21 @@ public class test001 {
 	public void beanTeat002() {
 
 		
-		User obj = (User) context.getBean("user1");
+		User obj = (User) context.getBean("user");
 		obj.getMessage();
 		obj = context.getBean(User.class);
 		obj.getMessage();
-		boolean gg = context.isSingleton("user1");
+		boolean gg = context.isSingleton("user");
 		System.out.println(gg);
 	}
 
 	@Test
 	public void beanStudentTeat002() {
-		Student obj = (Student) context.getBean("student1");
+		Student obj = (Student) context.getBean("student");
 		logger.info(obj.hashCode() + "");
 		Student obj2 = context.getBean(Student.class);
 		logger.info(obj2.hashCode() + "");
-		boolean gg = context.isSingleton("student1");
+		boolean gg = context.isSingleton("student");
 	
 		System.out.println(gg);
 	}

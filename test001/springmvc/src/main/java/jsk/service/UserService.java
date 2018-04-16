@@ -8,17 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 //
 import org.springframework.stereotype.Service;
 
-import jsk.controller.UserController;
 import jsk.dao.UserDao;
 import jsk.vo.User;
 
 @Service
 public class UserService {
 	private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+
 	@Autowired
-	private User user1;
-	@Autowired
-	private UserDao userDao1;
+	private UserDao userDao;
 
 	public User getUserByID(String id) {
 		logger.info(id);
@@ -28,28 +26,12 @@ public class UserService {
 
 	}
 
-	public List<User> getUsers() {
-		logger.info(user1+"");
-		logger.info(userDao1+"");
-		List<User> list = userDao1.getUsers();
+	public List<User> getUsers() {	
+		List<User> list = userDao.getUsers();
 		return list;
 
 	}
 
-	public User getUser1() {
-		return user1;
-	}
-
-	public void setUser1(User user1) {
-		this.user1 = user1;
-	}
-
-	public UserDao getUserDao1() {
-		return userDao1;
-	}
-
-	public void setUserDao1(UserDao userDao) {
-		this.userDao1 = userDao;
-	}
+	
 
 }
