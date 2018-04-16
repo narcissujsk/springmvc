@@ -25,6 +25,16 @@
 			<c:out value="${name}" />
 			<p>
 		</c:forTokens>
+		
+		<c:forEach items="${users}" var="s" varStatus="abc">      
+                <div id="div1">   
+                    ${abc.current}    
+                    <ul>  
+                        <li>学号：${s.id}</li>  
+                        <li>姓名：${s.name}</li>  
+                    </ul>  
+                </div>  
+            </c:forEach>
 	</body>
 	<script type="text/javascript">
 		console.info('${userlist}');

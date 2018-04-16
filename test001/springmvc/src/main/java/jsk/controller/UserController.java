@@ -61,6 +61,19 @@ public class UserController {
 		ResponseEntity<String> re = new ResponseEntity<String>(entity, null, HttpStatus.ACCEPTED);
 		return re;
 	}
+	
+	@RequestMapping(value = "", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	@ResponseBody
+	public ResponseEntity<String> getUsersByPost(HttpServletRequest request, HttpServletResponse response) {
+		
+		List<User> users = service.getUsers();
+		logger.info("getUsers"+users);	
+		Gson gson = new Gson();
+		String entity = gson.toJson(users);
+		ResponseEntity<String> re = new ResponseEntity<String>(entity, null, HttpStatus.ACCEPTED);
+		return re;
+	}
+	
 	public UserService getService() {
 		return service;
 	}
@@ -72,7 +85,7 @@ public class UserController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/userlist", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String userlist(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -85,7 +98,7 @@ public class UserController {
 		String userlist = gson.toJson(users);
 		model.addAttribute("serverTime", formattedDate );
 		model.addAttribute("userlist", userlist );
-		
+		model.addAttribute("users", users );
 		return "userlist";
 	}
 
