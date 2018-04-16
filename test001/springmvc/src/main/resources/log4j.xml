@@ -17,7 +17,7 @@
 	<logger name="jsk">
 		<level value="info" />
 	</logger>
-	<logger name="jsk1">
+	<logger name="jstl">
 		<level value="info" />
 	</logger>
 	<!-- 3rdparty Loggers -->
