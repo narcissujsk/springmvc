@@ -7,21 +7,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
-
-import jsk.service.UserService;
 import jsk.vo.Student;
-import jsk.vo.User;
-import knights.BraveKnight;
 
 public class StudentTest {
 	private static final Logger logger = LoggerFactory.getLogger(StudentTest.class);
 	private AbstractApplicationContext context;
 
-	@Before
+/*	@Before
 	public void before() {
 		 context = new FileSystemXmlApplicationContext(
 					"src/main/webapp/WEB-INF/spring/student.xml");
+	}*/
+	@Before
+	public void before() {
+		 context = new ClassPathXmlApplicationContext("xml/student.xml");
 	}
 
 	@After
@@ -29,11 +28,7 @@ public class StudentTest {
 		context.close();
 	}
 
-	@Test
-	public void test() {
-		System.out.println("fff");
-		logger.info("ffff");
-	}
+	
 	@Test
 	public void getClassPpath() {
 		System.out.println("fff");

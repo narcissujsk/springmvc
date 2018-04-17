@@ -7,12 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
-
-import jsk.service.UserService;
-import jsk.vo.Student;
 import jsk.vo.User;
-import knights.BraveKnight;
 
 public class UserTest {
 	private static final Logger logger = LoggerFactory.getLogger(UserTest.class);
@@ -20,8 +15,7 @@ public class UserTest {
 
 	@Before
 	public void before() {
-		 context = new FileSystemXmlApplicationContext(
-					"src/main/webapp/WEB-INF/spring/user.xml");
+		 context = new ClassPathXmlApplicationContext("xml/user.xml");
 	}
 
 	@After

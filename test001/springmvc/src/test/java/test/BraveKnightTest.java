@@ -7,8 +7,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
-
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import knights.BraveKnight;
 import knights.Knight;
 import knights.Quest;
@@ -28,8 +27,7 @@ public class BraveKnightTest {
 
 	@Before
 	public void before() {
-		 context = new FileSystemXmlApplicationContext(
-					"src/main/webapp/WEB-INF/spring/knight.xml");
+		 context = new ClassPathXmlApplicationContext("xml/knight.xml");
 	}
 
 	@After
