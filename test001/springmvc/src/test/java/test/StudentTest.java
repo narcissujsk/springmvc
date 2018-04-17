@@ -14,14 +14,14 @@ import jsk.vo.Student;
 import jsk.vo.User;
 import knights.BraveKnight;
 
-public class UserTest {
-	private static final Logger logger = LoggerFactory.getLogger(UserTest.class);
+public class StudentTest {
+	private static final Logger logger = LoggerFactory.getLogger(StudentTest.class);
 	private AbstractApplicationContext context;
 
 	@Before
 	public void before() {
 		 context = new FileSystemXmlApplicationContext(
-					"src/main/webapp/WEB-INF/spring/user.xml");
+					"src/main/webapp/WEB-INF/spring/student.xml");
 	}
 
 	@After
@@ -45,14 +45,13 @@ public class UserTest {
 	
 
 	@Test
-	public void getUserBeanByID() {
-
-		
-		User obj = (User) context.getBean("userTest");
-		obj.getMessage();
-		obj = context.getBean(User.class);
-		obj.getMessage();
-		boolean gg = context.isSingleton("userTest");
-		System.out.println(gg);
+	public void beanStudentTeat() {
+		Student obj = (Student) context.getBean("studentTest");
+		//logger.info(obj.hashCode() + "");
+		//Student obj2 = context.getBean(Student.class);
+		//logger.info(obj2.hashCode() + "");
+		boolean gg = context.isSingleton("studentTest");
+	
+		System.out.println(obj);
 	}
 }

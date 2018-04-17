@@ -40,11 +40,11 @@ public class User {
 	}
 
 	public void init() {
-		//System.out.println(this.getClass()+"Bean is going through init.");
+		System.out.println(this.getClass()+"Bean is going through init.");
 	}
 
 	public void destroy() {
-	//	System.out.println(this.getClass()+"Bean will destroy now.");
+		System.out.println(this.getClass()+"Bean will destroy now.");
 	}
 
 }
