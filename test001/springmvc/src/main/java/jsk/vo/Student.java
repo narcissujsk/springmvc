@@ -34,12 +34,12 @@ public class Student implements InitializingBean,DisposableBean {
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		logger.info(this.getClass()+" afterPropertiesSet");
+		//logger.info(this.getClass()+" afterPropertiesSet");
 	}
 
 	@Override
 	public void destroy() throws Exception {
-		logger.info(this.getClass()+" destroy");
+		//logger.info(this.getClass()+" destroy");
 		
 	}
 }

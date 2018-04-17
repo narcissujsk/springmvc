@@ -1,4 +1,4 @@
-package knights;
+package test;
 import static org.mockito.Mockito.*;
 
 import org.junit.After;
@@ -11,7 +11,6 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import knights.BraveKnight;
 import knights.Quest;
-import test.test001;
 
 public class BraveKnightTest {
 	private static final Logger logger = LoggerFactory.getLogger(BraveKnightTest.class);
@@ -29,7 +28,7 @@ public class BraveKnightTest {
 	@Before
 	public void before() {
 		 context = new FileSystemXmlApplicationContext(
-					"src/main/webapp/WEB-INF/spring/contextConfigLocation.xml");
+					"src/main/webapp/WEB-INF/spring/knight.xml");
 	}
 
 	@After
@@ -39,7 +38,7 @@ public class BraveKnightTest {
 
 	@Test
 	public void testknight() {
-		BraveKnight knight = (BraveKnight) context.getBean("knight");
+		BraveKnight knight = (BraveKnight) context.getBean("knightTest");
 		knight.embarkOnQuest();
 	}
 

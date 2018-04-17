@@ -14,14 +14,14 @@ import jsk.vo.Student;
 import jsk.vo.User;
 import knights.BraveKnight;
 
-public class test001 {
-	private static final Logger logger = LoggerFactory.getLogger(test001.class);
+public class UserTest {
+	private static final Logger logger = LoggerFactory.getLogger(UserTest.class);
 	private AbstractApplicationContext context;
 
 	@Before
 	public void before() {
 		 context = new FileSystemXmlApplicationContext(
-					"src/main/webapp/WEB-INF/spring/contextConfigLocation.xml");
+					"src/main/webapp/WEB-INF/spring/user.xml");
 	}
 
 	@After
@@ -35,13 +35,7 @@ public class test001 {
 		logger.info("ffff");
 	}
 	@Test
-	public void testknight() {
-		BraveKnight knight = (BraveKnight) context.getBean("knight");
-		knight.embarkOnQuest();
-	}
-	
-	@Test
-	public void test002() {
+	public void getClassPpath() {
 		System.out.println("fff");
 		String s[] = System.getProperty("java.class.path").split(";");
 		for (String string : s) {
@@ -49,35 +43,26 @@ public class test001 {
 		}
 	}
 	
-	@Test
-	public void beanTeat001() {
-
-		User obj = (User) context.getBean("user1");
-		obj.getMessage();
-		obj = context.getBean(User.class);
-		obj.getMessage();
-
-	}
 
 	@Test
-	public void beanTeat002() {
+	public void getUserBeanByID() {
 
 		
-		User obj = (User) context.getBean("user");
+		User obj = (User) context.getBean("userTest");
 		obj.getMessage();
 		obj = context.getBean(User.class);
 		obj.getMessage();
-		boolean gg = context.isSingleton("user");
+		boolean gg = context.isSingleton("userTest");
 		System.out.println(gg);
 	}
 
 	@Test
-	public void beanStudentTeat002() {
-		Student obj = (Student) context.getBean("student");
+	public void beanStudentTeat() {
+		Student obj = (Student) context.getBean("studentTest");
 		logger.info(obj.hashCode() + "");
 		Student obj2 = context.getBean(Student.class);
 		logger.info(obj2.hashCode() + "");
-		boolean gg = context.isSingleton("student");
+		boolean gg = context.isSingleton("studentTest");
 	
 		System.out.println(gg);
 	}

@@ -23,22 +23,25 @@
 		<property name="studentid" value="id1" />
 		<property name="studentname" value="name1" />
 	</bean>
+	
 	<bean id="user" class="jsk.vo.User" scope="singleton"
 		init-method="init" destroy-method="destroy">
 		<property name="id" value="id1" />
 		<property name="name" value="name1" />
 	</bean>
 	
-	<bean id="userDao" class="jsk.dao.UserDao">
-	
+	<bean id="userDao" class="jsk.dao.UserDao">	
 	</bean>
+	
 	<bean id="service" class="jsk.service.UserService" scope="singleton">
 	</bean>
-	   <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+	
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
         <property name="jndiName">
             <value>java:comp/env/jdbc/datasource</value>
         </property>
     </bean>
+    
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource">
             <ref bean="dataSource" />
