@@ -17,8 +17,8 @@
   <bean id="minstrelTest" class="knights.Minstrel">
   </bean>
 
-  <!-- <aop:config>
-    <aop:aspect ref="minstrel">
+  <aop:config>
+    <aop:aspect ref="minstrelTest">
       <aop:pointcut id="embark"
           expression="execution(* *.embarkOnQuest(..))"/>
         
@@ -28,6 +28,6 @@
       <aop:after pointcut-ref="embark" 
           method="singAfterQuest"/>
     </aop:aspect>
-  </aop:config> -->
+  </aop:config> 
   
 </beans>

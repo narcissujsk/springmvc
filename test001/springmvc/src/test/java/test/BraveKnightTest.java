@@ -10,6 +10,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import knights.BraveKnight;
+import knights.Knight;
 import knights.Quest;
 
 public class BraveKnightTest {
@@ -38,7 +39,7 @@ public class BraveKnightTest {
 
 	@Test
 	public void testknight() {
-		BraveKnight knight = (BraveKnight) context.getBean("knightTest");
+		Knight knight =(Knight) context.getBean("knightTest");
 		knight.embarkOnQuest();
 	}
 
