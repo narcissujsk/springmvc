@@ -24,8 +24,7 @@
 		<property name="studentname" value="name1" />
 	</bean>
 	
-	<bean id="user" class="jsk.vo.User" scope="singleton"
-		init-method="init" destroy-method="destroy">
+	<bean id="user" class="jsk.vo.User" scope="singleton">
 		<property name="id" value="id1" />
 		<property name="name" value="name1" />
 	</bean>

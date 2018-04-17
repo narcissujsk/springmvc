@@ -7,10 +7,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import jsk.vo.Student;
 
-public class StudentTest {
-	private static final Logger logger = LoggerFactory.getLogger(StudentTest.class);
+import jsk.vo.StudentTest;
+
+public class StudentTestJUnit {
+	private static final Logger logger = LoggerFactory.getLogger(StudentTestJUnit.class);
 	private AbstractApplicationContext context;
 
 /*	@Before
@@ -41,7 +42,7 @@ public class StudentTest {
 
 	@Test
 	public void beanStudentTeat() {
-		Student obj = (Student) context.getBean("studentTest");
+		StudentTest obj = (StudentTest) context.getBean("studentTest");
 		//logger.info(obj.hashCode() + "");
 		//Student obj2 = context.getBean(Student.class);
 		//logger.info(obj2.hashCode() + "");
