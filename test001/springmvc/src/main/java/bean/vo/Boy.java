@@ -12,11 +12,16 @@ public class Boy implements People {
 	private String name;
 	private List <String>roles;
 	private List <Car> cars;
+	private String id;
 	public Boy(Car car) {
 		this.car = car;
 	}
 	public Boy(Car car,String name) {
 		this.car = car;
+		this.setName(name);
+	}
+	public Boy(String id,String name) {
+		this.setId(id);
 		this.setName(name);
 	}
 	public Boy(Car car,String name,List<String> roles,List<Car> cars) {
@@ -70,6 +75,12 @@ public class Boy implements People {
 	}
 	public void setCars(List <Car> cars) {
 		this.cars = cars;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }
