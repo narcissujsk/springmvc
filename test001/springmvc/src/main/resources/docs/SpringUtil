@@ -1,0 +1,95 @@
+首先在spring的配置文件中添加
+
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+  
+1. <util:constant/>元素 
+比如某类存在如下字段定义  
+public static final String hwStatic = "hello static constant";
+如果希望以上属性取值作为受管Bean，可以如下配置:  
+<util:constant id="hwConstant" static-field="test.HelloWorld.hwStatic"/>
+这样就将java代码中的常量hwStatic（在test包下的HelloWorld类中）配置给spring进行管理，id为另起的名字； 又eg:
+<util:constant id="maxValue" static-field="java.lang.Integer.MAX_VALUE"/>
+  
+2. <util:property-path/>元素 
+
+<bean id="property-path" path="helloWorld.hello"/>
+
+<bean id="helloWorld" class="test.HelloWorld">
+<property name="hello" value="hi"/>
+</bean>
+这里path="helloworld.hello"就是指bean为"helloworld"的属性hello。
+
+3. <util:properties/>元素     "classpath:"表明，将从类路径上查找并装载xxx属性文件.  
+<util:properties id="xxx" location="classpath:xxxxx.properties">
+
+4. <util:list/>元素 
+<util:list id="listUtil" list-class="java.util.ArrayList">
+	<value>first</valuse>
+	<value>two</valuse>
+	<value>three</valuse>
+	<value>ten</valuse>
+</util:list>
+它的作用就是在spring启动初始化bean时，给listUtil这个list赋值为这四个值。 下面的同理
+
+5. <util:map/>元素
+<bean id="abstractCollectionBean" abstract="true">
+	<property name="map">
+		<map>
+			<entry key="mapKey1" value="mapValue1">
+			<entry key="mapKey2" value="mapValue2">
+		</map>
+	</property>
+</bean>
+     继承了abstractCollectionBean的子bean  
+
+<bean id="CollectionBean" class="test.CollectionBean" parent="abstractCollectionBean">
+	<property name="map">
+		<map merge="true" key-type="java.lang.String" value-type="java.lang.String">
+			<entry key="mapKey1" value="mapValue1Override"/>
+			<entry>
+				<key><value>mapKey2</value></key>
+				<value>mapValue2</value>
+			</entry>
+			<entry key="testBean" value-ref="testBean">
+		</map>
+	</property>
+</bean>
+<bean id="testBean" class="test.TestBean" />
+       为了简化MapFactoryBean对象的使用,可使用如下代码 ：
+
+<util:map id="mapUtil" map-class="java.util.HashMap">
+<entry key="1" value="first">
+<entry key="2" value="two">
+<entry key="3" value="three">
+</util:map>
+ 
+ 6. <util:set/>元素    同样的，为了简化SetFactoryBean对象,可使用如下代码 ：
+
+<util:set id="setUtil" set-class="java.util.HashSet">
+	<value>first</value>
+	<value>two</value>
+	<value>three</value>
+</util:set>
+
+7. 使用<p/>命名空间     在xml头加入 xmlns:p=http://www.springframework.org/schema/p；这里的p就是property的意思。        例如如下代码:  
+
+<bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+<property name="locations" ref="locations"/>
+<property name="order" value="1"/>
+</bean>
+<util:list id="locations">
+<value>userinfo.properties</value>
+</util:list>
+    在导入了</p>命名空间后，等价于  
+<bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" p:locations-ref="locations" p:order="1" />
+<util:list id="locations">
+<value>userinfo.properties</value>
+</util:list>
