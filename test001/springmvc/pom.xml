@@ -28,7 +28,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -168,14 +168,16 @@
 			<version>1.2</version>
 		</dependency>
 
-		<!-- Test -->
+
+
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
+			<version>4.12</version>
+			<scope>test</scope>
 		</dependency>
-		
-		
+
 		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -214,6 +216,14 @@
 			<version>2.18.0</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.stefanbirkner/system-rules -->
+		<dependency>
+			<groupId>com.github.stefanbirkner</groupId>
+			<artifactId>system-rules</artifactId>
+			<version>1.16.0</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
