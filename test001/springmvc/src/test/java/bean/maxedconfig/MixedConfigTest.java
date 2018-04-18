@@ -1,27 +1,29 @@
-package bean.xmlconfig;
+package bean.maxedconfig;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import bean.mixedconfig.MixedConfig;
 import bean.vo.Boy;
 import bean.vo.Car;
 
-public class XmlConfigTest {
-	private static final Logger logger = LoggerFactory.getLogger(XmlConfigTest.class);
+public class MixedConfigTest {
+	private static final Logger logger = LoggerFactory.getLogger(MixedConfigTest.class);
 	private AbstractApplicationContext context;
 
-	/*
-	 * @Before public void before() { context = new FileSystemXmlApplicationContext(
-	 * "src/main/webapp/WEB-INF/spring/student.xml"); }
-	 */
+/*	@Before
+	public void before() {
+		 context = new FileSystemXmlApplicationContext(
+					"src/main/webapp/WEB-INF/spring/student.xml");
+	}*/
 	@Before
 	public void before() {
-		context = new ClassPathXmlApplicationContext("bean/xmlconfig/xmlConfig.xml");
+		 context = new AnnotationConfigApplicationContext(MixedConfig.class);
 	}
 
 	@After
@@ -29,18 +31,26 @@ public class XmlConfigTest {
 		context.close();
 	}
 
+	
 	@Test
-	public void getClassPpath() {
-		System.out.println("fff");
+	public void getClassPath() {
+		logger.info("fff");
 		String s[] = System.getProperty("java.class.path").split(";");
 		for (String string : s) {
 			System.out.println(string);
 		}
 	}
-
+	
 	@Test
 	public void car() {
 		Car obj = (Car) context.getBean("smallcar");
+		obj.run();
+
+		System.out.println(obj);
+	}
+	@Test
+	public void boy() {
+		Boy obj = (Boy) context.getBean("boy");
 		obj.run();
 
 		System.out.println(obj);

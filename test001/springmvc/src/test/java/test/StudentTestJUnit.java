@@ -43,10 +43,7 @@ public class StudentTestJUnit {
 	@Test
 	public void beanStudentTeat() {
 		StudentTest obj = (StudentTest) context.getBean("studentTest");
-		//logger.info(obj.hashCode() + "");
-		//Student obj2 = context.getBean(Student.class);
-		//logger.info(obj2.hashCode() + "");
-		boolean gg = context.isSingleton("studentTest");
+		context.isSingleton("studentTest");
 	
 		System.out.println(obj);
 	}

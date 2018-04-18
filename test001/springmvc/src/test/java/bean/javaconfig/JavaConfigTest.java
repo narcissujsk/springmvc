@@ -10,7 +10,6 @@ import org.springframework.context.support.AbstractApplicationContext;
 
 import bean.vo.Boy;
 import bean.vo.Car;
-import jsk.vo.StudentTest;
 
 public class JavaConfigTest {
 	private static final Logger logger = LoggerFactory.getLogger(JavaConfigTest.class);

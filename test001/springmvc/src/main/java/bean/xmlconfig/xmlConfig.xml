@@ -12,9 +12,9 @@
 	<util:constant id="boyname"
 		static-field="util.Util.boyname" />
 
-	<bean id="smallcar" class="bean.vo.SmallCar" />
+	<!-- <bean id="smallcar" class="bean.vo.SmallCar" /> -->
 
-	<bean id="boy" class="bean.vo.Boy" />
+	<!-- <bean id="boy" class="bean.vo.Boy" /> -->
 
 	<bean id="boy2" class="bean.vo.Boy">
 		<constructor-arg ref="smallcar" />
