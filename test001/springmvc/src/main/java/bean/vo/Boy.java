@@ -1,14 +1,17 @@
-package bean.autoconfig;
+package bean.vo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component("boy")
 public class Boy implements People {
-
+	//@Autowired
 	private Car car;
 
-	@Override
+	public Boy(Car car) {
+		this.car = car;
+	}
+
 	public void say() {
 		System.out.println("Boy say");
 	}
@@ -26,7 +29,6 @@ public class Boy implements People {
 		return car;
 	}
 
-	@Autowired(required = false)
 	public void setCar(Car car) {
 		this.car = car;
 	}

@@ -11,10 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import bean.vo.SmallCar;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = BoyConfig.class)
-public class BoyTest {
+@ContextConfiguration(classes = AutoConfig.class)
+public class AutoConfigTest2 {
 
 	@Rule  
 	public final SystemOutRule log = new SystemOutRule().enableLog(); 

@@ -1,4 +1,4 @@
-package bean.autoconfig;
+package bean.vo;
 
 import org.springframework.stereotype.Component;
 

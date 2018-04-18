@@ -5,13 +5,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import bean.vo.Boy;
+import bean.vo.Car;
 import jsk.vo.StudentTest;
 
-public class StudentTestJUnit {
-	private static final Logger logger = LoggerFactory.getLogger(StudentTestJUnit.class);
+public class JavaConfigTest {
+	private static final Logger logger = LoggerFactory.getLogger(JavaConfigTest.class);
 	private AbstractApplicationContext context;
 
 /*	@Before
@@ -21,7 +23,7 @@ public class StudentTestJUnit {
 	}*/
 	@Before
 	public void before() {
-		 context = new ClassPathXmlApplicationContext("xml/student.xml");
+		 context = new AnnotationConfigApplicationContext(JavaConfig.class);
 	}
 
 	@After
@@ -31,8 +33,8 @@ public class StudentTestJUnit {
 
 	
 	@Test
-	public void getClassPpath() {
-		System.out.println("fff");
+	public void getClassPath() {
+		logger.info("fff");
 		String s[] = System.getProperty("java.class.path").split(";");
 		for (String string : s) {
 			System.out.println(string);
@@ -41,13 +43,15 @@ public class StudentTestJUnit {
 	
 
 	@Test
-	public void beanStudentTeat() {
-		StudentTest obj = (StudentTest) context.getBean("studentTest");
-		//logger.info(obj.hashCode() + "");
-		//Student obj2 = context.getBean(Student.class);
-		//logger.info(obj2.hashCode() + "");
-		boolean gg = context.isSingleton("studentTest");
-	
+	public void getCar() {
+		Car obj = (Car) context.getBean("smallcar");
+		obj.run();
+		System.out.println(obj);
+	}
+	@Test
+	public void getBoy() {
+		Boy obj = (Boy) context.getBean("boy");
+		obj.run();
 		System.out.println(obj);
 	}
 }

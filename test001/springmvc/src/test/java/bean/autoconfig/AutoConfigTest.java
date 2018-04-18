@@ -8,13 +8,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
+import bean.vo.Car;
+import bean.vo.People;
+
 public class AutoConfigTest {
 	private static final Logger logger = LoggerFactory.getLogger(AutoConfigTest.class);
 	private AbstractApplicationContext context;
 
 	@Before
 	public void before() {
-		 context = new AnnotationConfigApplicationContext(BoyConfig.class);
+		 context = new AnnotationConfigApplicationContext(AutoConfig.class);
 	}
 
 	@After
