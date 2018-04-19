@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 @Aspect
-public class Log {
+public class LogUtil {
 	private static final Logger logger = LoggerFactory.getLogger(Logger.class);
 	@Pointcut("execution(* *.Log(..))")
 	public void log() {}

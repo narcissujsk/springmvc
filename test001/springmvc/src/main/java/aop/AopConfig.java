@@ -5,8 +5,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-import util.Log;
-
 @Configuration
 @EnableAspectJAutoProxy
 @ComponentScan
@@ -18,4 +16,8 @@ public class AopConfig {
 		return new Log();
 	}
 
+	@Bean("user")
+	public User user() {
+		return new User();
+	}
 }
