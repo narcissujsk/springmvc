@@ -3,7 +3,7 @@
 	xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
- 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -28,8 +28,10 @@
 	</beans:bean>
 
 	<context:component-scan base-package="jsk" />
+	<context:component-scan base-package="layer" />
 	<context:component-scan base-package="jstl" />
 	<context:component-scan base-package="servlet" />
+	<context:component-scan base-package="bootstrap" />
 
 	<context:annotation-config />
 

@@ -1,4 +1,4 @@
-package jsk.layer;
+package layer;
 
 import java.text.DateFormat;
 import java.util.Date;
