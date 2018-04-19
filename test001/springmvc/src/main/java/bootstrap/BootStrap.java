@@ -34,5 +34,69 @@ public class BootStrap {
 	
 		return "bootstrap/bootstrap";
 	}
+	@RequestMapping(value = "/b1", method = RequestMethod.GET)
+	public String b1(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
 
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+
+		String formattedDate = dateFormat.format(date);
+	
+		model.addAttribute("serverTime", formattedDate);
+	
+		return "bootstrap/b1";
+	}
+	@RequestMapping(value = "/b2", method = RequestMethod.GET)
+	public String b2(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+
+		String formattedDate = dateFormat.format(date);
+	
+		model.addAttribute("serverTime", formattedDate);
+	
+		return "bootstrap/b2";
+	}
+	@RequestMapping(value = "/b3", method = RequestMethod.GET)
+	public String b3(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+
+		String formattedDate = dateFormat.format(date);
+	
+		model.addAttribute("serverTime", formattedDate);
+	
+		return "bootstrap/b3";
+	}
+	@RequestMapping(value = "/b4", method = RequestMethod.GET)
+	public String b4(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+
+		String formattedDate = dateFormat.format(date);
+	
+		model.addAttribute("serverTime", formattedDate);
+	
+		return "bootstrap/b4";
+	}
+	@RequestMapping(value = "/b5", method = RequestMethod.GET)
+	public String b5(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+
+		String formattedDate = dateFormat.format(date);
+	
+		model.addAttribute("serverTime", formattedDate);
+	
+		return "bootstrap/b5";
+	}
 }

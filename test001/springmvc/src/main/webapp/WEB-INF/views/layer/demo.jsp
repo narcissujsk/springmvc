@@ -4,7 +4,7 @@
 
 	<head>
 		<title>Home</title>
-		<script src="${pageContext.request.contextPath}/js/JQuery/jquery-3.3.1.js"></script>
+		<script src="${pageContext.request.contextPath}/js/jquery/jquery.js"></script>
 		<script src="${pageContext.request.contextPath}/js/layer/layer.js"></script>
 	</head>
 
