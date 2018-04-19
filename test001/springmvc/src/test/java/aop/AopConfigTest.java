@@ -39,7 +39,12 @@ public class AopConfigTest {
 	@Test
 	public void aopTest() {
 		User obj = (User) context.getBean("user");
-		obj.Log();;
+		obj.Log(1);
+		obj.Log(2);
+		obj.Log(2);
+		obj.Log(3);
+		obj.Log(3);
+		obj.Log(3);
 		logger.info(obj+"");
 	}
 	
