@@ -4,12 +4,15 @@
 <html>
 
 	<head>
-		<meta charset="utf-8">
 		<title>Bootstrap 实例</title>
+		<meta charset="utf-8">	
 		<!-- 包含头部信息用于适应不同设备 -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- 包含 bootstrap 样式表 -->
-		<link rel="stylesheet" href="https://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/js/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/default.css">
+		<script src="${pageContext.request.contextPath}/js/jquery/jquery.js"></script>
+		<script src="${pageContext.request.contextPath}/js/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 
 	<body>
@@ -57,12 +60,6 @@
 			<p>打印图标: <span class="glyphicon glyphicon-print"></span></p>
 			<p>下载图标：<span class="glyphicon glyphicon-download"></span></p>
 		</div>
-
-		<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
-		<!-- 可选: 包含 jQuery 库 -->
-		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-		<!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
-		<script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</body>
 
 </html>

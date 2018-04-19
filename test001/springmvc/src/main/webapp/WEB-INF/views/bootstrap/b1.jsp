@@ -2,10 +2,10 @@
 <%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	
+
 	<head>
 		<title>Bootstrap 实例 - 嵌套列</title>
-		<meta charset="utf-8">	
+		<meta charset="utf-8">
 		<!-- 包含头部信息用于适应不同设备 -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- 包含 bootstrap 样式表 -->
@@ -52,6 +52,14 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="container ">
+			<div class="h1">Bootstrap标题一</div>
+			<div class="h2">Bootstrap标题二</div>
+			<div class="h3">Bootstrap标题三</div>
+			<div class="h4">Bootstrap标题四</div>
+			<div class="h5">Bootstrap标题五</div>
+			<div class="h6">Bootstrap标题六</div>
 		</div>
 	</body>
 
