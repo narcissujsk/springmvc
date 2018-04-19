@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
   <context:property-placeholder
-    location="my.properties" />
+    location="properties/my.properties" />
 
   <bean class="bean.vo.Boy"
     c:_0 = "${id}"
