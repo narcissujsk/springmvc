@@ -8,9 +8,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import knights.BraveKnight;
-import knights.Knight;
-import knights.Quest;
+
+import learn.springInAction.knights.BraveKnight;
+import learn.springInAction.knights.Knight;
+import learn.springInAction.knights.Quest;
+
 
 public class BraveKnightTest {
 	private static final Logger logger = LoggerFactory.getLogger(BraveKnightTest.class);

@@ -37,8 +37,8 @@ public class BaseDao {
 
 		try {
 			if (conn == null) {
-				//conn = getConn2();
-				conn = getConn();
+				conn = getConn2();
+				//conn = getConn();
 			}
 
 		} catch (Exception e) {

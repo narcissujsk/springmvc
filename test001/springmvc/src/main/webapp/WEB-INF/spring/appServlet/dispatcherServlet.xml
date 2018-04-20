@@ -35,14 +35,11 @@
 	</beans:bean>
 
 	<context:component-scan base-package="jsk" />
-	<context:component-scan base-package="layer" />
+	<context:component-scan base-package="task" />
+	<!-- <context:component-scan base-package="layer" />
 	<context:component-scan base-package="jstl" />
 	<context:component-scan base-package="servlet" />
 	<context:component-scan base-package="bootstrap" />
 	<context:component-scan base-package="other" />
-
-	<context:annotation-config />
-
-
-
+ -->
 </beans:beans>

@@ -16,7 +16,7 @@ public class UserService {
 	private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
 	@Autowired
-	private UserDao userDao;
+	private UserDao userdao;
 
 	public User getUserByID(String id) {
 		logger.info(id);
@@ -27,18 +27,20 @@ public class UserService {
 	}
 
 	public List<User> getUsers() {	
-		List<User> list = userDao.getUsers();
+		List<User> list = userdao.getUsers();
 		return list;
 
 	}
 
-	public UserDao getUserDao() {
-		return userDao;
+	public UserDao getUserdao() {
+		return userdao;
 	}
 
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
+	public void setUserdao(UserDao userdao) {
+		this.userdao = userdao;
 	}
+
+	
 
 	
 

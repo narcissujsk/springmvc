@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-autowire="byName">
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans	 http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/mvc 	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/context 	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop 	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd 
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd
+	 "
+	 default-autowire="byName">
+
+	<task:annotation-driven />
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="multipartResolver"
@@ -19,31 +34,49 @@
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- <bean id="user" class="vo.User" scope="prototype"> </bean> -->
-	<bean id="student" class="jsk.vo.Student" scope="singleton">
-		<property name="studentid" value="id1" />
-		<property name="studentname" value="name1" />
+
+	<bean id="userdao" class="jsk.dao.UserDao">
 	</bean>
-	
-	<bean id="user" class="jsk.vo.User" scope="singleton">
-		<property name="id" value="id1" />
-		<property name="name" value="name1" />
+
+	<bean id="service" class="jsk.service.UserService"
+		scope="singleton">
 	</bean>
-	
-	<bean id="userDao" class="jsk.dao.UserDao">	
+
+	<!-- <bean id="dataSource"
+		class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/datasource</value>
+		</property>
 	</bean>
-	
-	<bean id="service" class="jsk.service.UserService" scope="singleton">
+
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean> -->
+
+	<!-- spring线程池 -->
+	<bean id="taskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<!-- 线程池维护线程的最少数量 -->
+		<property name="corePoolSize" value="5" />
+		<!-- 线程池维护线程所允许的空闲时间，默认为60s -->
+		<property name="keepAliveSeconds" value="200" />
+		<!-- 线程池维护线程的最大数量 -->
+		<property name="maxPoolSize" value="20" />
+		<!-- 缓存队列最大长度 -->
+		<property name="queueCapacity" value="20" />
+		<!-- 对拒绝task的处理策略 线程池对拒绝任务（无线程可用）的处理策略，目前只支持AbortPolicy、CallerRunsPolicy；默认为后者 -->
+		<property name="rejectedExecutionHandler">
+			<!-- AbortPolicy:直接抛出java.util.concurrent.RejectedExecutionException异常 -->
+			<!-- CallerRunsPolicy:主线程直接执行该任务，执行完之后尝试添加下一个任务到线程池中，可以有效降低向线程池内添加任务的速度 -->
+			<!-- DiscardOldestPolicy:抛弃旧的任务、暂不支持；会导致被丢弃的任务无法再次被执行 -->
+			<!-- DiscardPolicy:抛弃当前任务、暂不支持；会导致被丢弃的任务无法再次被执行 -->
+			<bean
+				class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy" />
+		</property>
+		<property name="waitForTasksToCompleteOnShutdown"
+			value="true" />
 	</bean>
-	
-	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-        <property name="jndiName">
-            <value>java:comp/env/jdbc/datasource</value>
-        </property>
-    </bean>
-    
-    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource">
-            <ref bean="dataSource" />
-        </property>
-    </bean>
 </beans>

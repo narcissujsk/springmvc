@@ -12,12 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import jstl.JstlController;
+
 @Scope("prototype")
 @Controller
 @RequestMapping("/requirejs")
 public class Requirejs {
-	private static final Logger logger = LoggerFactory.getLogger(JstlController.class);
+	private static final Logger logger = LoggerFactory.getLogger(Requirejs.class);
 
 	/**
 	 * Simply selects the home view to render by returning its name.
