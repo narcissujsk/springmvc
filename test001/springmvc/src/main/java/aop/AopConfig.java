@@ -20,4 +20,9 @@ public class AopConfig {
 	public User user() {
 		return new User();
 	}
+	
+	@Bean("messageAspect")
+	public MessageAspect messageAspect() {
+		return new MessageAspect();
+	}
 }

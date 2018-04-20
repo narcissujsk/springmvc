@@ -1,6 +1,6 @@
 package aop;
 
-public class Meaasge implements MessageInterface {
+public class Message implements MessageInterface {
 
 	public void sentMessage() {
 		System.out.println("sentMessage");

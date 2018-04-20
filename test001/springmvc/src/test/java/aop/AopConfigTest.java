@@ -47,5 +47,10 @@ public class AopConfigTest {
 		obj.Log(3);
 		logger.info(obj+"");
 	}
-	
+	@Test
+	public void aopTest2() {
+		MessageInterface obj = (MessageInterface) context.getBean("user");
+		obj.sentMessage();
+		logger.info(obj+"");
+	}
 }
