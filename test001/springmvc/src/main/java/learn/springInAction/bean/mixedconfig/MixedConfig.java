@@ -9,7 +9,7 @@ import learn.springInAction.bean.javaconfig.JavaConfig;
 
 @Configuration
 @Import(JavaConfig.class)
-@ImportResource("classpath:bean/xmlconfig/xmlConfig.xml")
+@ImportResource("classpath:learn/springInAction/bean/xmlconfig/xmlConfig.xml")
 public class MixedConfig {
 
 }

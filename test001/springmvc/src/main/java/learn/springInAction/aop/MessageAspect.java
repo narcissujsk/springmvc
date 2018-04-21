@@ -19,6 +19,6 @@ import org.slf4j.LoggerFactory;
 public class MessageAspect {
 	private static final Logger logger = LoggerFactory.getLogger(MessageAspect.class);
 
-	@DeclareParents(value = "aop.User+",defaultImpl=Message.class)
+	@DeclareParents(value = "learn.springInAction.aop.User+",defaultImpl=Message.class)
 	public static MessageInterface mess;
 }

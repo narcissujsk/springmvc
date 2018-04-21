@@ -19,7 +19,7 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<listener>
-		<listener-class>servlet.MyListener</listener-class>
+		<listener-class>learn.servlet.MyListener</listener-class>
 	</listener>
 	<!-- Processes application requests -->
 	<servlet>

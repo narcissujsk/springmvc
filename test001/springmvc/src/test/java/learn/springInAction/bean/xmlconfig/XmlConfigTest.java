@@ -21,7 +21,7 @@ public class XmlConfigTest {
 	 */
 	@Before
 	public void before() {
-		context = new ClassPathXmlApplicationContext("bean/xmlconfig/xmlConfig.xml");
+		context = new ClassPathXmlApplicationContext("learn/springInAction/bean/xmlconfig/xmlConfig.xml");
 	}
 
 	@After

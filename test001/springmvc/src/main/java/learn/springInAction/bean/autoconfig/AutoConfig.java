@@ -4,7 +4,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages= {"bean"})
+@ComponentScan(basePackages= {"learn.springInAction.bean"})
 public class AutoConfig{
 
 }
+
+/*@Configuration
+@ComponentScan(basePackages= {"bean"})
+public class AutoConfig{
+
+}*/

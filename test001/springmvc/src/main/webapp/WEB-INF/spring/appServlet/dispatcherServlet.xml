@@ -36,10 +36,10 @@
 
 	<context:component-scan base-package="jsk" />
 	<context:component-scan base-package="task" />
-	<!-- <context:component-scan base-package="layer" />
-	<context:component-scan base-package="jstl" />
-	<context:component-scan base-package="servlet" />
-	<context:component-scan base-package="bootstrap" />
+	<context:component-scan base-package="learn.layer" />
+	<context:component-scan base-package="learn.jstl" />
+	<context:component-scan base-package="learn.servlet" />
+	<context:component-scan base-package="learn.bootstrap" />
 	<context:component-scan base-package="other" />
- -->
+ 
 </beans:beans>

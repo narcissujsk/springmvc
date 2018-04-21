@@ -13,8 +13,8 @@ public class JavaConfig {
 		return new SmallCar();
 	}
 	@Bean("boy")
-	public Boy getBoy(Car car) {
-		return new Boy(car);
+	public Boy getBoy(Car smallcar) {
+		return new Boy(smallcar);
 	}
 
 }

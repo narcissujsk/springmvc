@@ -12,23 +12,23 @@
 	<util:constant id="boyname"
 		static-field="util.Util.boyname" />
 
-	<bean id="smallcar" class="bean.vo.SmallCar" />
+	<bean id="smallcar" class="learn.springInAction.bean.vo.SmallCar" />
 
-	<bean id="boy" class="bean.vo.Boy" />
+	<bean id="boy" class="learn.springInAction.bean.vo.Boy" />
 
-	<bean id="boy2" class="bean.vo.Boy">
+	<bean id="boy2" class="learn.springInAction.bean.vo.Boy">
 		<constructor-arg ref="smallcar" />
 	</bean>
 
-	<bean id="boy3" class="bean.vo.Boy" c:car-ref="smallcar" />
+	<bean id="boy3" class="learn.springInAction.bean.vo.Boy" c:car-ref="smallcar" />
 
-	<bean id="boy4" class="bean.vo.Boy" c:car-ref="smallcar"
+	<bean id="boy4" class="learn.springInAction.bean.vo.Boy" c:car-ref="smallcar"
 		c:name="name" />
 
-	<bean id="boy5" class="bean.vo.Boy" c:_0-ref="smallcar"
+	<bean id="boy5" class="learn.springInAction.bean.vo.Boy" c:_0-ref="smallcar"
 		c:_1="name" />
 
-	<bean id="boy6" class="bean.vo.Boy">
+	<bean id="boy6" class="learn.springInAction.bean.vo.Boy">
 		<constructor-arg ref="smallcar" />
 		<constructor-arg value="smallcar" />
 		<constructor-arg>
@@ -39,7 +39,7 @@
 			</list>
 		</constructor-arg>
 	</bean>
-	<bean id="boy7" class="bean.vo.Boy">
+	<bean id="boy7" class="learn.springInAction.bean.vo.Boy">
 		<constructor-arg ref="smallcar" />
 		<constructor-arg value="smallcar" />
 		<constructor-arg>
@@ -54,7 +54,7 @@
 		</constructor-arg>
 	</bean>
 
-	<bean id="boy8" class="bean.vo.Boy">
+	<bean id="boy8" class="learn.springInAction.bean.vo.Boy">
 		<property name="name" ref="boyname"></property>
 		<property name="car" ref="smallcar"></property>
 	</bean>

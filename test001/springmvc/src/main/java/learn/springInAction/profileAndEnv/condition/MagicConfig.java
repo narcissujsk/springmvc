@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource("classpath:/profileAndEnv/condition/sp.properties")
+@PropertySource("classpath:learn/springInAction/profileAndEnv/condition/sp.properties")
 public class MagicConfig {
 	@Autowired
 	Environment env;
