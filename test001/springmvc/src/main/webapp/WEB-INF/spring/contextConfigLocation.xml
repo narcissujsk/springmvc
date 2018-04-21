@@ -17,7 +17,6 @@
 	 "
 	 default-autowire="byName">
 
-	<task:annotation-driven />
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="multipartResolver"

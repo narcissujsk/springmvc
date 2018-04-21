@@ -17,10 +17,10 @@
 	<logger name="jsk">
 		<level value="info" />
 	</logger>
-	<logger name="jstl">
+	<logger name="task">
 		<level value="info" />
 	</logger>
-	<logger name="servlet">
+	<logger name="learn">
 		<level value="info" />
 	</logger>
 	<!-- 3rdparty Loggers -->

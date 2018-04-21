@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 @Aspect
 public class LogUtil {
 	private static final Logger logger = LoggerFactory.getLogger(Logger.class);
-	@Pointcut("execution(* *.Log(..))")
+	@Pointcut("execution(* *.*(..))")
 	public void log() {}
 	
 	public static void info(Object msg) {
