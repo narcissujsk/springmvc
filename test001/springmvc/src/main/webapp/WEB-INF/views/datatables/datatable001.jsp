@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/default.css">
 		<script src="${pageContext.request.contextPath}/js/jquery/jquery.js"></script>
 		<script src="${pageContext.request.contextPath}/js/bootstrap/js/bootstrap.min.js"></script>
+		 <%@ include file="/view/include/common_css.jsp" %>
 	</head>
 
 	<body>

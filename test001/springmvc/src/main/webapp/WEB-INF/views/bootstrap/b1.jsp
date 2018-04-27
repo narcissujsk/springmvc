@@ -1,18 +1,11 @@
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<jsp:include page="/web/inc.jsp"></jsp:include>
 <!DOCTYPE html>
 <html>
 
 	<head>
 		<title>Bootstrap 实例 - 嵌套列</title>
-		<meta charset="utf-8">
-		<!-- 包含头部信息用于适应不同设备 -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- 包含 bootstrap 样式表 -->
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/js/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/default.css">
-		<script src="${pageContext.request.contextPath}/js/jquery/jquery.js"></script>
-		<script src="${pageContext.request.contextPath}/js/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 
 	<body>

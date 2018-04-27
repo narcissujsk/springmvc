@@ -1,11 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:include page="/web/inc.jsp"></jsp:include>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <html>
 
 	<head>
 		<title>Home</title>
-		<script src="${pageContext.request.contextPath}/js/JQuery/jquery-3.3.1.js"></script>
-		<script src="${pageContext.request.contextPath}/js/layer/layer.js"></script>
 	</head>
 
 	<body>

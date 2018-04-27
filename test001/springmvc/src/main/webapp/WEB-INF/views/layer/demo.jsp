@@ -1,12 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<jsp:include page="/web/inc.jsp"></jsp:include>
 <html>
 
 	<head>
 		<title>Home</title>
-		<script src="${pageContext.request.contextPath}/js/jquery/jquery.js"></script>
-		<script src="${pageContext.request.contextPath}/js/layer/layer.js"></script>
-	</head>
+	
+		</head>
 
 	<body>
 		<h1>
@@ -48,7 +48,7 @@
 					maxmin: true,
 					shadeClose: true, //点击遮罩关闭层
 					area: ['800px', '520px'],
-					content: "${pageContext.request.contextPath}/web/layer.jsp"
+					content: "${pageContext.request.contextPath}/web/layerdemo.jsp"
 				});
 			});
 

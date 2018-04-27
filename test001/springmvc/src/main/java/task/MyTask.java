@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 @Component("mytask")
-@Lazy(false)
+//@Lazy(false)
 //使用Lazy注解是因为spring 配置文件采用懒加载的原因default-lazy-init="true" 这个配置会导致 @Scheduled失效
 public class MyTask {
 	static int num;
@@ -27,8 +27,8 @@ public class MyTask {
 
 	private void executeTask() throws InterruptedException {
 		
-		logger.info("mytask begin no."+num++);
+		//logger.info("mytask begin no."+num++);
 		Thread.sleep(100*1000);
-		logger.info("mytask end"+num);
+		//logger.info("mytask end"+num);
 	}
 }
