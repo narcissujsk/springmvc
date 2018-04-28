@@ -42,6 +42,6 @@
 	<context:component-scan base-package="learn.bootstrap" />
 	<context:component-scan base-package="other" />
 	<context:component-scan base-package="util" />
-	<context:component-scan base-package="datatables" />
+	<context:component-scan base-package="demo" />
  
 </beans:beans>

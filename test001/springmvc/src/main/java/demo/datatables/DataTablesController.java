@@ -1,4 +1,4 @@
-package datatables;
+package demo.datatables;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -32,8 +32,8 @@ public class DataTablesController {
 
 	private static final Logger logger = LoggerFactory.getLogger(DataTablesController.class);
 
-	@RequestMapping(value = "/001", method = RequestMethod.GET)
-	public String userlist(Locale locale, Model model) {
+	@RequestMapping(value = "/{jspname}", method = RequestMethod.GET)
+	public String get(@PathVariable(value = "jspname") String jspname,Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -45,7 +45,7 @@ public class DataTablesController {
 		
 		model.addAttribute("serverTime", formattedDate );
 	
-		return "datatables/datatable001";
+		return "datatables/"+jspname;
 	}
 
 }

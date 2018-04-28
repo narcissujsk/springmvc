@@ -36,7 +36,10 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>*.com</url-pattern>
+	</servlet-mapping>
 	<resource-ref>
 		<description>My DataSource Reference</description>
 		<res-ref-name>jdbc/datasource</res-ref-name>
@@ -45,7 +48,7 @@
 		<res-sharing-scope>Shareable</res-sharing-scope>
 	</resource-ref>
 
-
+	<!--字符编码  -->
 	<filter>
 		<filter-name>characterEncodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -62,4 +65,18 @@
 		<filter-name>characterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	 <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>demo.filter.LoginFilter</filter-class>
+        <init-param>
+            <param-name>excludedPages</param-name>
+            <param-value>login.jsp,register.jsp,retrievePassword.jsp</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+	
 </web-app>
