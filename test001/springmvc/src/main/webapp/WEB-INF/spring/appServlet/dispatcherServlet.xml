@@ -18,9 +18,21 @@
 		infrastructure -->
 
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven />
-	
-	<task:annotation-driven/>
+	<!-- <annotation-driven /> -->
+	<mvc:annotation-driven
+		enable-matrix-variables="true"
+		content-negotiation-manager="contentNegotiationManager" />
+	<beans:bean id="contentNegotiationManager"
+		class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+		<beans:property name="defaultContentType" value="application/json" />
+		<beans:property name="favorPathExtension" value="false" />
+		<beans:property name="favorParameter" value="false" />
+		<beans:property name="parameterName" value="mediaType" />
+		<beans:property name="ignoreAcceptHeader" value="false" />
+		<beans:property name="useJaf" value="false" />
+	</beans:bean>
+
+	<task:annotation-driven />
 	<mvc:default-servlet-handler />
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
@@ -36,12 +48,16 @@
 
 	<context:component-scan base-package="jsk" />
 	<!-- <context:component-scan base-package="task" /> -->
-	<context:component-scan base-package="learn.layer" />
-	<context:component-scan base-package="learn.jstl" />
-	<context:component-scan base-package="learn.servlet" />
-	<context:component-scan base-package="learn.bootstrap" />
+	<context:component-scan
+		base-package="learn.layer" />
+	<context:component-scan
+		base-package="learn.jstl" />
+	<context:component-scan
+		base-package="learn.servlet" />
+	<context:component-scan
+		base-package="learn.bootstrap" />
 	<context:component-scan base-package="other" />
 	<context:component-scan base-package="util" />
 	<context:component-scan base-package="demo" />
- 
+
 </beans:beans>
