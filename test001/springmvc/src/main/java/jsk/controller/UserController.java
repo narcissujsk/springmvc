@@ -51,20 +51,7 @@ public class UserController {
 		return re;
 	}
 	
-	@RequestMapping(value = "/{userid}.com", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
-	@ResponseBody
-	public ResponseEntity<String> getUser2(HttpServletRequest request, HttpServletResponse response,
-			@PathVariable(value = "userid") String userid) {
-		
-		User user = service.getUserByID(userid);
-		logger.info("getUser userid:" + userid);
-		System.out.println("getUser userid:" +userid+"");
-		Gson gson = new Gson();
-		user.setId(userid+".com");
-		String entity = gson.toJson(user);
-		ResponseEntity<String> re = new ResponseEntity<String>(entity, null, HttpStatus.ACCEPTED);
-		return re;
-	}
+	
 	@RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public ResponseEntity<String> getUsers(HttpServletRequest request, HttpServletResponse response) {
