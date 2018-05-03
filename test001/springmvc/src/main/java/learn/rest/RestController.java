@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -32,7 +33,7 @@ public class RestController {
 	@ResponseBody
 	public User getUser(HttpServletRequest request, HttpServletResponse response,
 			@PathVariable(value = "userid") String userid) {
-		
+		HttpHeaders responseHeaders = new HttpHeaders();
 		User user = service.getUserByID(userid);
 		logger.info("getUser userid:" + userid);
 		Gson gson = new Gson();
