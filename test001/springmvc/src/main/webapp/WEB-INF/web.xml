@@ -36,10 +36,10 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
+	<!-- <servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>*.com</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 	<resource-ref>
 		<description>My DataSource Reference</description>
 		<res-ref-name>jdbc/datasource</res-ref-name>

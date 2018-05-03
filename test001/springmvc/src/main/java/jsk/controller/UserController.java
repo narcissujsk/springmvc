@@ -44,7 +44,6 @@ public class UserController {
 		
 		User user = service.getUserByID(userid);
 		logger.info("getUser userid:" + userid);
-		System.out.println("getUser userid:" +userid+"");
 		Gson gson = new Gson();
 		String entity = gson.toJson(user);
 		ResponseEntity<String> re = new ResponseEntity<String>(entity, null, HttpStatus.ACCEPTED);
