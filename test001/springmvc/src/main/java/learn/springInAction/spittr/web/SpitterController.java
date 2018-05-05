@@ -20,7 +20,7 @@ import learn.springInAction.spittr.data.SpitterRepository;
 @RequestMapping("/spitter")
 public class SpitterController {
 
-  private SpitterRepository spitterRepository;
+	private SpitterRepository spitterRepository;
 
   @Autowired
   public SpitterController(SpitterRepository spitterRepository) {
@@ -29,7 +29,7 @@ public class SpitterController {
   
   @RequestMapping(value="/register", method=GET)
   public String showRegistrationForm() {
-    return "registerForm";
+    return "spitter/registerForm";
   }
   
   @RequestMapping(value="/register", method=POST)
@@ -37,7 +37,7 @@ public class SpitterController {
       @Valid Spitter spitter, 
       Errors errors) {
     if (errors.hasErrors()) {
-      return "registerForm";
+      return "spitter/registerForm";
     }
     
     spitterRepository.save(spitter);
@@ -48,7 +48,7 @@ public class SpitterController {
   public String showSpitterProfile(@PathVariable String username, Model model) {
     Spitter spitter = spitterRepository.findByUsername(username);
     model.addAttribute(spitter);
-    return "profile";
+    return "spitter/profile";
   }
   
 }

@@ -61,6 +61,9 @@
 	<mvc:resources mapping="/resources/**"
 		location="/resources/" />
 
+
+
+
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<beans:bean
@@ -81,6 +84,8 @@
 		base-package="learn.servlet" />
 	<context:component-scan
 		base-package="learn.bootstrap" />
+		<context:component-scan
+		base-package="learn.springInAction.spittr" />
 	<context:component-scan base-package="other" />
 	<context:component-scan base-package="util" />
 	<context:component-scan base-package="demo" />

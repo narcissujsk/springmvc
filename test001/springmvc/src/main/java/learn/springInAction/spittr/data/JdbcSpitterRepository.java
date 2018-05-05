@@ -12,12 +12,12 @@ import learn.springInAction.spittr.Spitter;
 
 
 
-@Repository
+//@Repository
 public class JdbcSpitterRepository implements SpitterRepository {
   
   private JdbcOperations jdbc;
 
-  @Autowired
+ // @Autowired
   public JdbcSpitterRepository(JdbcOperations jdbc) {
     this.jdbc = jdbc;
   }

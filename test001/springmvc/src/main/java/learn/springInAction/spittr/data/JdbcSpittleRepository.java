@@ -12,12 +12,12 @@ import org.springframework.stereotype.Repository;
 import learn.springInAction.spittr.Spittle;
 
 
-@Repository
+//@Repository
 public class JdbcSpittleRepository implements SpittleRepository {
 
   private JdbcOperations jdbc;
 
-  @Autowired
+ // @Autowired
   public JdbcSpittleRepository(JdbcOperations jdbc) {
     this.jdbc = jdbc;
   }

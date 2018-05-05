@@ -6,13 +6,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//@Controller
-//@RequestMapping("/")
+@Controller("spitter")
+@RequestMapping({"/spitter","/s"})
+
 public class HomeController {
 
- // @RequestMapping(method = GET)
+@RequestMapping(method = GET)
   public String home(Model model) {
-    return "home";
+    return "spitter/home";
   }
 
 }

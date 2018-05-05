@@ -122,7 +122,7 @@ public class BaseDao {
 	 * @return
 	 */
 	public static List<List<Object>> getData(String ProjName, String sql) {
-		Connection conn = getConn();
+		Connection conn = getConn2();
 		PreparedStatement ps = null;
 		List<List<Object>> list = new ArrayList<List<Object>>();
 		ResultSet rs = null;
