@@ -78,7 +78,7 @@
 		<property name="basenames">
 			<list>
 			<!-- 	<value>classpath:messages</value> -->
-				<value>messages</value>
+				<value>/WEB-INF/messages</value>
 			</list>
 		</property>
 	</bean>
