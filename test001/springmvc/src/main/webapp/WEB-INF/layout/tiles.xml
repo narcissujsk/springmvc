@@ -9,24 +9,24 @@
     <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
   </definition>
 
-  <definition name="home" extends="base">
-    <put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+  <definition name="t/home" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/tiles/home.jsp" />
   </definition>
 
-  <definition name="registerForm" extends="base">
-    <put-attribute name="body" value="/WEB-INF/views/registerForm.jsp" />
+  <definition name="t/registerForm" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/tiles/registerForm.jsp" />
   </definition>
 
-  <definition name="profile" extends="base">
-    <put-attribute name="body" value="/WEB-INF/views/profile.jsp" />
+  <definition name="t/profile" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/tiles/profile.jsp" />
   </definition>
 
-  <definition name="spittles" extends="base">
-    <put-attribute name="body" value="/WEB-INF/views/spittles.jsp" />
+  <definition name="t/spittles" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/tiles/spittles.jsp" />
   </definition>
 
-  <definition name="spittle" extends="base">
-    <put-attribute name="body" value="/WEB-INF/views/spittle.jsp" />
+  <definition name="t/spittle" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/tiles/spittle.jsp" />
   </definition>
 
 </tiles-definitions>
