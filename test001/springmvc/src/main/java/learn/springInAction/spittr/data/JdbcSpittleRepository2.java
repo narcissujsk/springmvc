@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import jsk.dao.BaseDao;
@@ -14,6 +16,7 @@ import learn.springInAction.spittr.Spittle;
 @Repository("jdbcSpittleRepository")
 public class JdbcSpittleRepository2 extends BaseDao implements SpittleRepository {
 	//
+	Logger logger = LoggerFactory.getLogger(JdbcSpittleRepository2.class);
 	public List<User> getUsers() {
 		List<User> list = new ArrayList<User>();
 		StringBuffer sqlBuffer = new StringBuffer();
@@ -42,6 +45,7 @@ public class JdbcSpittleRepository2 extends BaseDao implements SpittleRepository
 
 		String sql = "select id, message, created_at, latitude, longitude" + " from Spittle"
 				+ " order by created_at desc limit 20";
+		logger.info(sql);
 		List<Spittle> list = new ArrayList<Spittle>();
 		ResultSet rs = null;
 		try {
@@ -63,9 +67,12 @@ public class JdbcSpittleRepository2 extends BaseDao implements SpittleRepository
 
 	@Override
 	public List<Spittle> findSpittles(long max, int count) {
-		String sql = "select id, message, created_at, latitude, longitude  from Spittle  where 1=1 and id < ? order by created_at desc limit 20";
+		String sql = "select id, message, created_at, latitude, longitude  from Spittle  where 1=1 "
+				//+ "and id < ? "
+				+ "order by created_at desc limit 20";
+		logger.info(sql+"   "+count);
 		List<Object> params = new ArrayList<Object>();
-		params.add(count);
+		//params.add(count);
 		List<Spittle> list = new ArrayList<Spittle>();
 		ResultSet rs = null;
 		try {

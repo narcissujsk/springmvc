@@ -15,7 +15,7 @@ import learn.springInAction.spittr.Spitter;
 import learn.springInAction.spittr.data.SpitterRepository;
 
 
-@Controller("tilesSpitterController")
+//@Controller("tilesSpitterController")
 @RequestMapping("/spitter/tiles")
 public class SpitterController {
 

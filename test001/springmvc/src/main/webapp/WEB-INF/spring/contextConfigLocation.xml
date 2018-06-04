@@ -77,9 +77,33 @@
 		<property name="cacheSeconds" value="10"></property>
 		<property name="basenames">
 			<list>
-			<!-- 	<value>classpath:messages</value> -->
+				<!-- <value>classpath:messages</value> -->
 				<value>/WEB-INF/messages</value>
 			</list>
 		</property>
+	</bean>
+
+	<context:property-placeholder
+		location="classpath:db.properties, classpath:redis-conf.properties" />
+
+	<!--数据源 c3p0连接池 -->
+	<bean id="dataSource"
+	class="com.mchange.v2.c3p0.ComboPooledDataSource"
+	destroy-method="close">
+		<property name="driverClass"
+			value="${db.connection.driverClass}"></property>
+		<property name="jdbcUrl" value="${db.connection.url}"></property>
+		<property name="user" value="${db.connection.username}"></property>
+		<property name="password" value="${db.connection.password}"></property>
+		<property name="minPoolSize" value="${db.c3p0.minPoolSize}" />
+		<property name="maxPoolSize" value="${db.c3p0.maxPoolSize}" />
+		<property name="maxStatements"
+			value="${db.c3p0.maxStatements}" />
+		<property name="idleConnectionTestPeriod"
+			value="${db.c3p0.idleConnectionTestPeriod}" />
+	</bean>
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+	<bean id="log" class="util.LogAspect" scope="singleton">
 	</bean>
 </beans>

@@ -17,7 +17,7 @@ import learn.springInAction.spittr.web.SpittleForm;
 
 
 
-@Controller("tilesSpittleController")
+//@Controller("tilesSpittleController")
 @RequestMapping("/spittles/tiles")
 public class SpittleController {
 

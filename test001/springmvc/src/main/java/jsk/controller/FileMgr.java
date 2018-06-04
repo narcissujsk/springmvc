@@ -52,7 +52,7 @@ public class FileMgr {
 	public String download(HttpServletRequest request, Model model) {
 		Locale h = new Locale("en");
 		List<String> files=new ArrayList<String>();
-		String path = request.getSession().getServletContext().getRealPath("/resources/image/");
+		String path = request.getSession().getServletContext().getRealPath("/resources/images/");
 		 File dir = new File(path);
 		 File[] list = dir.listFiles();
 		 for (File file : list) {
@@ -101,7 +101,7 @@ public class FileMgr {
 	public ResponseEntity<byte[]> download(HttpServletRequest request, @RequestParam("filename") String filename, Model model)
 			throws Exception {
 		// 下载文件路径
-		String path = request.getSession().getServletContext().getRealPath("/resources/image/");
+		String path = request.getSession().getServletContext().getRealPath("/resources/images/");
 		File file = new File(path + File.separator + filename);
 		HttpHeaders headers = new HttpHeaders();
 		// 下载显示的文件名，解决中文名称乱码问题

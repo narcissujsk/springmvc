@@ -72,29 +72,12 @@
 		<beans:property name="suffix" value=".jsp" />
 		<beans:property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
-		<property name="order" value="1"></property>
+		<property name="order" value="66"></property>
 
 	</beans:bean>
 
-	<!-- Tiles 配置相关bean -->
-	<bean id="tilesConfigurer"
-		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-		<property name="definitions">
-			<list>
-				<value>/WEB-INF/layout/tiles.xml</value>
-				<value>/WEB-INF/views/**/tiles.xml</value>
-			</list>
-		</property>
-	</bean>
 
-	<!-- 和InternalResourceViewResolver同时使用 不会起作用, UrlBasedViewResolver不管视图是否存在都会返回视图,不会调用下一个视图解析器 
-		InternalResourceViewResolver继承自UrlBasedViewResolver order的默认值是最大,所以不设置order的情况下InternalResourceViewResolver会拦截所有的解析请求,失其他解析器失效 -->
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-		<property name="viewClass"
-			value="org.springframework.web.servlet.view.tiles3.TilesView" />
-		<property name="order" value="2"></property>
-	</bean>
+
 
 	<context:component-scan base-package="jsk" />
 	<!-- <context:component-scan base-package="task" /> -->
@@ -113,5 +96,9 @@
 	<context:component-scan base-package="other" />
 	<context:component-scan base-package="util" />
 	<context:component-scan base-package="demo" />
+
+
+
+
 
 </beans>
